@@ -15,7 +15,8 @@ import sys
 from comfy_execution.progress import get_progress_state
 from comfy_execution.utils import get_executing_context
 from comfy_api import feature_flags
-
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
 
 if __name__ == "__main__":
     #NOTE: These do not do anything on core ComfyUI, they are for custom nodes.
@@ -412,3 +413,6 @@ if __name__ == "__main__":
         logging.info("\nStopped server")
 
     cleanup_temp()
+
+# netstat -ano | findstr :8188
+# taskkill /PID <PID> /F
